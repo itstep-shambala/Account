@@ -10,12 +10,18 @@ CONFIG += c++11
 
 SOURCES += \
     accountinfo.cpp \
+    accountmodel.cpp \
+    dbconnect.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    personmodel.cpp
 
 HEADERS += \
     accountinfo.h \
-    mainwindow.h
+    accountmodel.h \
+    dbconnect.h \
+    mainwindow.h \
+    personmodel.h
 
 FORMS += \
     accountinfo.ui \
