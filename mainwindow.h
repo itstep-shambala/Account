@@ -6,6 +6,8 @@
 #include "QtSql/QSqlDatabase"
 #include "QSqlQuery"
 
+#include "accountinfo.h"
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -27,5 +29,6 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    AccountInfo *accountInfo;
 };
 #endif // MAINWINDOW_H
