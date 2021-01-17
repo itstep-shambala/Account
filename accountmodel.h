@@ -10,9 +10,10 @@ public:
     QString login;
     QString password;
     bool isActive;
+    QString rule;
 
     AccountModel();
-    AccountModel(int id, QString  login, QString password, bool isActive);
+    AccountModel(int id, QString  login, QString password, bool isActive, QString rule);
 };
 
 #endif // ACCOUNTMODEL_H
