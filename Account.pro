@@ -14,14 +14,16 @@ SOURCES += \
     dbconnect.cpp \
     main.cpp \
     mainwindow.cpp \
-    personmodel.cpp
+    personmodel.cpp \
+    usermodel.cpp
 
 HEADERS += \
     accountinfo.h \
     accountmodel.h \
     dbconnect.h \
     mainwindow.h \
-    personmodel.h
+    personmodel.h \
+    usermodel.h
 
 FORMS += \
     accountinfo.ui \

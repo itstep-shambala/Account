@@ -12,7 +12,7 @@ public:
     bool isActive;
 
     AccountModel();
-    AccountModel(int id, QString  login, QString password, bool isActive);
+    AccountModel(int id, QString login, QString password, bool isActive);
 };
 
 #endif // ACCOUNTMODEL_H
