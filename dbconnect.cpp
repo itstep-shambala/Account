@@ -13,8 +13,8 @@ AccountModel DBConnect::SelectAccount(QString login, QString password)
     bool isActive;
     QString role;
 
-    //QString sql = "SELECT id, login, password, is_active FROM table_account WHERE login = '" + login + "' AND password = '" + password + "' AND is_active = 1;";
-    QString sql = "SELECT table_account.id, table_account.login, table_account.password, table_role.role FROM table_account, table_account_role, table_role WHERE login = '"+ login + "' AND password = '"+ password +"' AND is_active = 1 AND table_account_role.account_id = table_account.id AND table_account_role.role_id = table_role.id;";
+    QString sql = "SELECT table_account.id, table_account.login, table_account.password, table_account.is_active, table_role.role FROM table_account, table_account_role, table_role WHERE login = '"+ login + "' AND password = '"+ password +"' AND is_active = 1 AND table_account_role.account_id = table_account.id AND table_account_role.role_id = table_role.id;";
+
     QSqlQuery query;
     query.exec(sql);
     db.close();

@@ -34,6 +34,6 @@ private slots:
 private:
     Ui::MainWindow *ui;
     AccountInfo *accountInfo;
-    UserWindowDesign *userWindowDesign;
+    UserWindowDesign *userWindow;
 };
 #endif // MAINWINDOW_H

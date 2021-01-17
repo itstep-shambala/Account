@@ -37,14 +37,17 @@ void MainWindow::on_button_Submit_clicked()
     AccountModel account = db.SelectAccount(login, password);
 
     if (account.id > 0) {
-        ui->statusbar->showMessage("Вход разрешён");        
-        accountInfo = new AccountInfo(this, account.id);
-        hide();
-        //accountInfo->show();
-        userWindowDesign = new UserWindowDesign();
-        userWindowDesign->show();
-
-    } else {
-        ui->statusbar->showMessage("Вход запрещён");
-    }
+        if (account.role=="admin") {
+            ui->statusbar->showMessage("Вход разрешён");
+            userWindow = new UserWindowDesign(this);
+            hide();
+            userWindow->show();
+        }
+        else {
+            ui->statusbar->showMessage("Вход разрешён");
+            accountInfo = new AccountInfo(this, account.id);
+            hide();
+            accountInfo->show();}
+        }
+    else {ui->statusbar->showMessage("Вход запрещён");}
 }
