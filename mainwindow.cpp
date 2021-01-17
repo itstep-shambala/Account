@@ -6,6 +6,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
 }
 
 MainWindow::~MainWindow()
@@ -39,7 +40,10 @@ void MainWindow::on_button_Submit_clicked()
         ui->statusbar->showMessage("Вход разрешён");        
         accountInfo = new AccountInfo(this, account.id);
         hide();
-        accountInfo->show();
+        //accountInfo->show();
+        userWindowDesign = new UserWindowDesign();
+        userWindowDesign->show();
+
     } else {
         ui->statusbar->showMessage("Вход запрещён");
     }

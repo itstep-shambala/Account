@@ -7,6 +7,7 @@
 #include "QSqlQuery"
 
 #include "accountinfo.h"
+#include "userwindowdesign.h"
 
 #include "dbconnect.h"
 #include "accountmodel.h"
@@ -33,5 +34,6 @@ private slots:
 private:
     Ui::MainWindow *ui;
     AccountInfo *accountInfo;
+    UserWindowDesign *userWindowDesign;
 };
 #endif // MAINWINDOW_H
