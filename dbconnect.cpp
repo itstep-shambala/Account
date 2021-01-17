@@ -11,8 +11,11 @@ AccountModel DBConnect::SelectAccount(QString login, QString password)
 {
     int id;
     bool isActive;
+    QString role;
 
-    QString sql = "SELECT id, login, password, is_active FROM table_account WHERE login = '" + login + "' AND password = '" + password + "' AND is_active = 1;";
+    //QString sql = "SELECT id, login, password, is_active FROM table_account WHERE login = '" + login + "' AND password = '" + password + "' AND is_active = 1;";
+    QString sql = "SELECT table_account.id, table_account.login, table_account.password, table_account.is_active, table_role.role FROM table_account_role, table_account, table_role where login = '" + login + "' AND password = '" + password + "' AND is_active = 1 and table_account_role.account_id = table_account.id and table_account_role.role_id = table_role.id;";
+
     QSqlQuery query;
     query.exec(sql);
     db.close();
@@ -22,8 +25,9 @@ AccountModel DBConnect::SelectAccount(QString login, QString password)
         login = query.value(1).toString();
         password = query.value(2).toString();
         isActive = query.value(3).toBool();
+        role = query.value(4).toString();
 
-        AccountModel accountModel(id, login, password, isActive);
+        AccountModel accountModel(id, login, password, isActive, role);
         return accountModel;
     } else {
         AccountModel accountModel;
