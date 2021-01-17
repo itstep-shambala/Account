@@ -8,6 +8,9 @@
 
 #include "accountinfo.h"
 
+#include "dbconnect.h"
+#include "accountmodel.h"
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE

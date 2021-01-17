@@ -6,6 +6,10 @@
 #include "QtSql/QSqlDatabase"
 #include "QSqlQuery"
 
+#include "accountmodel.h"
+#include "personmodel.h"
+#include "dbconnect.h"
+
 namespace Ui {
 class AccountInfo;
 }
@@ -20,7 +24,7 @@ public:
 
 private:
     Ui::AccountInfo *ui;
-    int idAccount;
+    int id;
 
     void InitValue();
 };
