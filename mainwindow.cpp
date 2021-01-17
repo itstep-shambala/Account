@@ -37,7 +37,10 @@ void MainWindow::on_button_Submit_clicked()
 
     if (account.id > 0) {
         if (account.role=="admin") {
-            ui->statusbar->showMessage("Тут будет другое окно");
+            ui->statusbar->showMessage("Вход разрешён");
+            userWindow = new UserWindowDesign(this);
+            hide();
+            userWindow->show();
         }
         else {
             ui->statusbar->showMessage("Вход разрешён");
