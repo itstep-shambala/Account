@@ -14,18 +14,21 @@ SOURCES += \
     dbconnect.cpp \
     main.cpp \
     mainwindow.cpp \
-    personmodel.cpp
+    personmodel.cpp \
+    userwindowdesign.cpp
 
 HEADERS += \
     accountinfo.h \
     accountmodel.h \
     dbconnect.h \
     mainwindow.h \
-    personmodel.h
+    personmodel.h \
+    userwindowdesign.h
 
 FORMS += \
     accountinfo.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    userwindowdesign.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
