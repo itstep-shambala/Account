@@ -10,3 +10,9 @@ AccountModel::AccountModel(int id, QString  login, QString password, bool isActi
     this->isActive = isActive;
     this->role = role;
 }
+
+AccountModel::AccountModel(int id, QString  login)
+{
+    this->id = id;
+    this->login = login;
+}

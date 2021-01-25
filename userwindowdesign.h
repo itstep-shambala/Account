@@ -2,6 +2,7 @@
 #define USERWINDOWDESIGN_H
 
 #include <QMainWindow>
+#include <QVector>
 
 #include "QtSql/QSqlDatabase"
 #include "QSqlQuery"
@@ -25,6 +26,10 @@ public:
 
 private slots:
     void on_list_users_itemDoubleClicked(QListWidgetItem *item);
+
+    void on_pushButton_update_clicked();
+
+    void on_pushButton_cancel_clicked();
 
 private:
     Ui::UserWindowDesign *ui;
