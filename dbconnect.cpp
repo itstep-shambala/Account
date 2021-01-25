@@ -56,3 +56,30 @@ PersonModel DBConnect::SelectPerson(int id)
         return person;
     }
 }
+
+//заполнение таблицы
+QVector <AccountModel> DBConnect::UserTable()
+{
+    //Осуществляем запрос
+    QVector <AccountModel> Temp;
+    QSqlQuery query;
+    query.exec("SELECT id, first_name, last_name, birth_day, email, tel FROM table_person");
+    db.close();
+
+    while(query.next())
+    {
+        AccountModel accountModel(query.value(0).toInt(), query.value(1).toString());
+        Temp.push_back(accountModel);
+    }
+    return Temp;
+}
+
+//обновление данных
+void DBConnect::Update(int id, QString firstName, QString lastName, QDate birthDay, QString email, QString tel)
+{
+    //Осуществляем запрос
+    QSqlQuery query;
+    query.exec("UPDATE table_person SET first_name = '"+firstName+"', last_name = '"+lastName+"', birth_day = '"+birthDay.toString()+"', email = '"+email+"', tel = '"+tel+"' "
+                 "WHERE id = "+id+"");
+    db.close();
+}

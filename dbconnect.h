@@ -2,6 +2,7 @@
 #define DBCONNECT_H
 
 #include <QString>
+#include <QVector>
 
 #include "QtSql/QSqlDatabase"
 #include "QSqlQuery"
@@ -16,7 +17,8 @@ public:
     DBConnect();
     AccountModel SelectAccount(QString login, QString password);
     PersonModel SelectPerson(int id);
-
+    QVector <AccountModel> UserTable();
+    void Update(int id, QString firstName, QString lastName, QDate birthDay, QString email, QString tel);
 private:
     const QString path = "account.sqlite";
     QSqlDatabase db;

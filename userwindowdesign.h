@@ -2,6 +2,7 @@
 #define USERWINDOWDESIGN_H
 
 #include <QMainWindow>
+#include <QVector>
 
 #include "QtSql/QSqlDatabase"
 #include "QSqlQuery"

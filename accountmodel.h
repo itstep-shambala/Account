@@ -2,6 +2,7 @@
 #define ACCOUNTMODEL_H
 
 #include <QString>
+#include <QDate>
 
 class AccountModel
 {
@@ -14,6 +15,8 @@ public:
 
     AccountModel();
     AccountModel(int id, QString  login, QString password, bool isActive, QString role);
+    AccountModel(int id, QString  login);
+
 };
 
 #endif // ACCOUNTMODEL_H
